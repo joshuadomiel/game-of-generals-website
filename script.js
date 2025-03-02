@@ -18,7 +18,9 @@ document.querySelectorAll('.piece-selector').forEach(select => {
 document.getElementById('confirm-yes').addEventListener('click', function () {
     // Hide the dropdown and show the placeholder
     document.getElementById(currentSide).style.display = 'none';
-    document.getElementById(`${currentSide}-placeholder`).textContent = 'Piece Selected';
+    const placeholder = document.getElementById(`${currentSide}-placeholder`);
+    placeholder.textContent = 'Piece Selected';
+    placeholder.classList.add('selected'); // Add class to change color to green
 
     // Hide the pop-up
     document.getElementById('confirmation-popup').style.display = 'none';
@@ -39,9 +41,9 @@ document.getElementById('arbitrate').addEventListener('click', function () {
     let winner = '';
     if (whiteValue === blackValue) {
         winner = 'draw';
-    } else if (whiteValue === 12 && blackValue !== -1) { // Spy (👀) can only be beaten by Private (Λ)
+    } else if (whiteValue === 12 && blackValue === -1) { // Spy (👀) can only be beaten by Private (Λ)
         winner = 'black';
-    } else if (blackValue === 12 && whiteValue !== -1) { // Spy (👀) can only be beaten by Private (Λ)
+    } else if (blackValue === 12 && whiteValue === -1) { // Spy (👀) can only be beaten by Private (Λ)
         winner = 'white';
     } else if (whiteValue > blackValue) {
         winner = 'white';

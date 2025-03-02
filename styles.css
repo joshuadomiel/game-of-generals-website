@@ -54,8 +54,12 @@ label {
 .placeholder {
     font-size: 16px;
     font-weight: bold;
-    color: #28a745; /* Green color for "Piece Selected" */
+    color: #dc3545; /* Red color for "Select a piece" */
     margin-bottom: 10px;
+}
+
+.placeholder.selected {
+    color: #28a745; /* Green color for "Piece Selected" */
 }
 
 button {
