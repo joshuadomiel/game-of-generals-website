@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of the Generals Arbiter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Game of the Generals Arbiter</h1>
+        <div class="side white-side">
+            <label for="white">White Side:</label>
+            <div id="white-placeholder" class="placeholder">Select a piece</div>
+            <select id="white" class="piece-selector">
+                <option value="" disabled selected>Select a piece</option>
+                <option value="12">👀 Spy</option>
+                <option value="11">★★★★★ General</option>
+                <option value="10">★★★★ General</option>
+                <option value="9">★★★ General</option>
+                <option value="8">★★ General</option>
+                <option value="7">★ General</option>
+                <option value="6">🔆🔆🔆 Colonel</option>
+                <option value="5">🔆🔆 Lt. Colonel</option>
+                <option value="4">🔆 Major</option>
+                <option value="3">⚠️⚠️⚠️ Captain</option>
+                <option value="2">⚠️⚠️ 1st Lieutenant</option>
+                <option value="1">⚠️ 2nd Lieutenant</option>
+                <option value="0">⏏️ Sergeant</option>
+                <option value="-1">Λ Private</option>
+            </select>
+        </div>
+        <div class="side black-side">
+            <label for="black">Black Side:</label>
+            <div id="black-placeholder" class="placeholder">Select a piece</div>
+            <select id="black" class="piece-selector">
+                <option value="" disabled selected>Select a piece</option>
+                <option value="12">👀 Spy</option>
+                <option value="11">★★★★★ General</option>
+                <option value="10">★★★★ General</option>
+                <option value="9">★★★ General</option>
+                <option value="8">★★ General</option>
+                <option value="7">★ General</option>
+                <option value="6">🔆🔆🔆 Colonel</option>
+                <option value="5">🔆🔆 Lt. Colonel</option>
+                <option value="4">🔆 Major</option>
+                <option value="3">⚠️⚠️⚠️ Captain</option>
+                <option value="2">⚠️⚠️ 1st Lieutenant</option>
+                <option value="1">⚠️ 2nd Lieutenant</option>
+                <option value="0">⏏️ Sergeant</option>
+                <option value="-1">Λ Private</option>
+            </select>
+        </div>
+        <button id="arbitrate">Arbitrate</button>
+        <div id="result"></div>
+    </div>
+
+    <!-- Confirmation Pop-up -->
+    <div id="confirmation-popup" class="popup">
+        <div class="popup-content">
+            <p>You selected: <span id="selected-piece"></span></p>
+            <p>Confirm your choice?</p>
+            <button id="confirm-yes">Yes</button>
+            <button id="confirm-no">No</button>
+        </div>
+    </div>
+
+    <!-- Winning Overlay -->
+    <div id="winner-overlay" class="winner-overlay hidden">
+        <div class="overlay-content">
+            <p id="winner-text"></p>
+            <button id="refresh-button">Refresh</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
